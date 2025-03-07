@@ -48,7 +48,7 @@ pipeline{
         stage('Testing'){
             steps{
                 sh 'docker images'
-                sh 'docker run -itd --name web -p 8000:80 webapp'
+                sh 'docker run -itd --name web1 -p 80:80 webapp'
                 sh 'docker ps'
                 
             }
