@@ -1,5 +1,6 @@
 pipeline{
-    agent java
+    agent {java
+    }
     stages{
         stage('CodeScan'){
             steps{
