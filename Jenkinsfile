@@ -1,7 +1,13 @@
 pipeline{
-    agent { label 'java'
-    }
+    agent any
     stages{
+        stage('CodeScan'){
+            steps{
+                sh 'trivy fs . -o file.txt'
+                sh 'cat file.txt'
+
+            }
+        }
         stage('DockerLogin'){
             steps{
                 sh 'aws ecr get-login-password --region us-east-1 | \
